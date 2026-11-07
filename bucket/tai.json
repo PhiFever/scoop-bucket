@@ -3,7 +3,7 @@
     "description": "在 Windows 上统计软件使用时长和网站浏览时长（PhiFever fork，无需管理员权限）",
     "homepage": "https://github.com/PhiFever/Tai",
     "license": "MIT",
-    "notes": "请用 scoop update tai 升级，不要用设置页里的内置更新器（它会拉取上游版本）。",
+    "notes": "请用 scoop update tai 升级，不要用设置页里的内置更新器（它会绕过 Scoop 直接覆盖文件）。",
     "url": "https://github.com/PhiFever/Tai/releases/download/1.5.0.8/Tai1.5.0.8.zip",
     "hash": "8dce9a092cd871311d7414676d7517124c0e463ac2d4ce885444651de95a03b9",
     "shortcuts": [
