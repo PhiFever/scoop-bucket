@@ -17,6 +17,14 @@
         "AppIcons",
         "Log"
     ],
+    "pre_uninstall": [
+        "if ($cmd -eq 'uninstall' -and (Get-ScheduledTask -TaskName 'Tai task' -ErrorAction SilentlyContinue)) {",
+        "    try { Start-Process schtasks.exe -ArgumentList '/delete /tn \"Tai task\" /f' -Verb RunAs -Wait -WindowStyle Hidden } catch {}",
+        "    if (Get-ScheduledTask -TaskName 'Tai task' -ErrorAction SilentlyContinue) {",
+        "        warn \"未能删除开机自启任务 'Tai task'，请在任务计划程序里手动删除。\"",
+        "    }",
+        "}"
+    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Planshit/Tai/releases/download/$version/Tai$version.zip"
